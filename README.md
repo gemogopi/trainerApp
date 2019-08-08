@@ -11,6 +11,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 The app has been configured with Router and supports deep linked URLs as well.
 
+You can see the [demo here](https://angular-bwqbsf.stackblitz.io/)
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
