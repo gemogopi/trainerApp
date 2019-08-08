@@ -1,0 +1,40 @@
+<div>
+  <ng-template #tree let-data>
+    <div *ngFor="let item of data" class="parent-node">
+      <div *ngIf="item">
+        <div
+          class="label-box"
+          [ngClass]="selected === item.uid ? 'selected' : ''"
+          (click)="onItemClick($event, item)"
+        >
+          <span *ngIf="item.tclass === 'group'" class="folder-icon">
+            <i class="material-icons">{{
+              item.expanded ? "expand_more" : "chevron_right"
+            }}</i
+            ><i class="material-icons">{{
+              item.expanded ? "folder_open" : "folder"
+            }}</i></span
+          >
+          <span class="folder-icon icon-holder">
+            <i *ngIf="item.tclass === 'slide'" class="material-icons">slideshow</i>
+            <i *ngIf="item.tclass === 'book'" class="material-icons">book</i>
+            <i *ngIf="item.tclass === 'project'" class="material-icons">assignment</i>
+            <i *ngIf="item.tclass === 'tour'" class="material-icons">video_library</i>
+          </span>
+          <span class="caption">{{ item.caption }}</span>
+        </div>
+
+        <div *ngIf="item.expanded">
+          <div *ngIf="item.assets" class="child-node">
+            <ng-container
+              *ngTemplateOutlet="tree; context: { $implicit: item.assets }"
+            ></ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-container
+    *ngTemplateOutlet="tree; context: { $implicit: [data] }"
+  ></ng-container>
+</div>

@@ -1,0 +1,34 @@
+ul { list-style-type: none; }
+
+.child-node {
+  padding-left: 20px;
+}
+
+.parent-node {
+  padding-left: 5px;
+}
+
+.label-box {
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.label-box:hover .caption {
+  color: skyblue
+}
+
+.selected {
+  background-color: rgb(58, 150, 202);
+  color: white;
+  font-weight: bold
+}
+
+.selected:hover .caption {
+  color: white;
+}
+
+.folder-icon {
+  position: relative;
+  top: 5px;
+  right: 3px;
+}

@@ -1,0 +1,12 @@
+<div clas="app-container">
+  <h1>Welcome to Trainer App</h1>
+  <div>Please browse through the contents below</div>
+  <div class="content">
+    <div class="left-section">
+        <app-tree [data]="courses" [selected]="selected" (itemClick)="itemClick($event)"></app-tree>
+    </div>
+    <div class="right-section"></div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
